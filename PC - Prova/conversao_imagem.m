@@ -1,23 +1,23 @@
 % =========================================================================
 % 
-% CÛdigo para convers„o de imagem em sequencia de bits
+% C√≥digo para convers√£o de imagem em sequencia de bits
 %
 % by Rayane de Souza e Vinicius Maciel 
 % Maio de 2021
 % =========================================================================
 
-% InicializaÁ„o 
+% Inicializa√ß√£o 
 clc, close all, clear all
 
-% .................  Transmiss„o  ......................................... 
+% .................  Transmiss√£o  ......................................... 
 
 % Leitura da imagem 
 img_1 = imread('rover.jpg');
 
-% Convers„o da imagem para matriz de bits
+% Convers√£o da imagem para matriz de bits
 img_1_bin = de2bi(img_1);
 
-% TransformaÁ„o da matriz de bits em um vetor
+% Transforma√ß√£o da matriz de bits em um vetor
 img_Tx_bin = img_1_bin(:).';
 
 
@@ -26,17 +26,17 @@ img_Tx_bin = img_1_bin(:).';
 img_Rx_bin = img_Tx_bin; 
 % -------------------------------------------------------------------------
 
-% ................. RecepÁ„o ..............................................
+% ................. Recep√ß√£o ..............................................
 
-% Convers„o do vetor de bits recuperados para uma matriz de pixels
+% Convers√£o do vetor de bits recuperados para uma matriz de pixels
 recovered_img_1_bin = uint8(reshape(img_Rx_bin,size(img_1_bin)));
 
-% Convers„o para formato original da imagem, isto È 3D
+% Convers√£o para formato original da imagem, isto √© 3D
 recovered_img_1 = reshape(bi2de(recovered_img_1_bin),size(img_1));
 
 
 % +++++++++++++++++++  Plotagens  +++++++++++++++++++++++++++++++++++++++++
-% ExibiÁ„o das imagens lida e recuperada
+% Exibi√ß√£o das imagens lida e recuperada
 figure;
 subplot(2,1,1), image(img_1), title('Imagem Original')
 subplot(2,1,2), image(recovered_img_1), title('Imagem Recuperada')
@@ -45,4 +45,3 @@ subplot(2,1,2), image(recovered_img_1), title('Imagem Recuperada')
 isequal(img_1,recovered_img_1)
 
 % EoF
-

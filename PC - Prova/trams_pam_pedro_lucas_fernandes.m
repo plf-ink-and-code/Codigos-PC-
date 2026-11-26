@@ -5,13 +5,13 @@ clc, close all, clear all
 
 M = 4;
 k = log2(M);         % Bits por símbolo (k = 2 para 4-PAM)
-snr = 12;            % Relação Sinal-Ruído em dB
+snr = 14.49;            % Relação Sinal-Ruído em dB
 nsamp = 4;           % Fator de superamostragem
 
 % ---LEITURA E PROCESSAMENTO DA IMAGEM ---
 
 % Leitura da imagem e conversão para escala de cinza e transforma numa foto 128x128 (linha e coluna da matriz)
-img = imread("foto_gatinho_3x4.jpeg");
+img = imread("foto_3x4.jpeg");
 img_1 = rgb2gray(imresize(img,[128 128]));
 
 % Conversão da imagem para matriz de bits 
